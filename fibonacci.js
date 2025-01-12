@@ -1,22 +1,29 @@
-function fibonacci(pos) {
-    let first = 0
-    let second = 1
-    let soma = 0
-    if (pos === 0 || pos === 1) {
-        return 0
+// 2) Fibonnacci
+function isFibonacci(num) {
+    if (num === 0 || num === 1) {
+        return `${num} pertence a sequência de Fibonacci`;
     }
-    if (pos === 2) {
-        return 1
-    } else {
-        for (let i = 1; i < pos; i++) {
-            soma = add(first, second)
-            first = second
-            second = soma
-        }
-    } return soma
-}
+
+    let previous = 0;
+    let current = 1;
+
+    while (current < num) {
+        let next = previous + current;
+        previous = current;
+        current = next;
+    }
+
+    // current === num ? console.log(`${num} pertence a sequência de Fibonacci`) : console.log(`${num} nao pertence a sequência de Fibonacci`);
+
+    if (current === num) {
+        return `${num} pertence a sequência de Fibonacci`;
+    }
+    return `${num} nao pertence a sequência de Fibonacci`;
+};
 
 
+console.log(isFibonacci(18));
 
-//receber um numero e ver se ele pertence a sequencia fibonacci
-// calcular a sequencia ate que obtenha um numero > ou igual o numero recebido
+//3 
+
+function handleVector(vector) { };
