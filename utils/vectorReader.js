@@ -1,6 +1,8 @@
-const dados = require('./dados.json');
+const dados = require('../dados.json');
 
+//3)
 function handleVector(vector) {
+    let monthTime = 30;
     let lowestValue = 'empty';
     let highestValue = 'empty';
     let values = [];
@@ -19,7 +21,7 @@ function handleVector(vector) {
         }
     });
 
-    average = values.reduce((sum, value) => sum + value, 0) / values.length;
+    average = values.reduce((sum, value) => sum + value, 0) / monthTime;
 
     values.forEach(item => {
         if (item > average) {
@@ -28,10 +30,7 @@ function handleVector(vector) {
 
     });
 
-    console.log(`Menor valor: ${lowestValue}, Maior Valor: ${highestValue}`);
-    console.log(values.length);
-    console.log('media:', average);
-    console.log(`Numero de dias que o lucro foi acima da media: ${count}`);
+    return `O menor valor de faturamento foi: ${lowestValue}\nO maior Valor de faturamento: ${highestValue}\nNumero de dias que o lucro foi acima da media do mês: ${count}`;
 };
 
-handleVector(dados);
+module.exports = handleVector;

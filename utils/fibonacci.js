@@ -13,17 +13,10 @@ function isFibonacci(num) {
         current = next;
     }
 
-    // current === num ? console.log(`${num} pertence a sequência de Fibonacci`) : console.log(`${num} nao pertence a sequência de Fibonacci`);
-
     if (current === num) {
         return `${num} pertence a sequência de Fibonacci`;
     }
     return `${num} nao pertence a sequência de Fibonacci`;
 };
 
-
-console.log(isFibonacci(18));
-
-//3 
-
-function handleVector(vector) { };
+module.exports = isFibonacci;
